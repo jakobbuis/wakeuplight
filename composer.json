@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "elberth90/yeelight-api-client": "^1.0",
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^2.5",
+        "nesbot/carbon": "^2.7"
     },
     "license": "proprietary",
     "authors": [
@@ -13,5 +14,10 @@
             "email": "jakob@jakobbuis.nl"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "WakeupLight\\": "src/"
+        }
+    }
 }
