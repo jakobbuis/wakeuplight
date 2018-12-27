@@ -4,7 +4,7 @@
 ## Installation
 1. Clone the repository.
 1. Copy `.env.example` to `.env` and add the IP-address of your Yeelight.
-1. Run `composer install` to install all dependencies.
+1. Run `php composer.phar install` to install all dependencies.
 1. Create a cronjob to run `php wakeup.php` at the desired time (the program takes 15 minutes). Try [crontab.guru](https://crontab.guru) to build your ideal schedule.
 
 ## Copyright
