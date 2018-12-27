@@ -33,10 +33,17 @@ class Manager
     public function stateFor(Carbon $time) : ?State
     {
         $states = [
-            '12:49' => new State(true),
-            '12:50' => new State(false),
-            '12:51' => new State(true),
-            '12:52' => new State(false),
+            '19:23' => new State(true, 100, 10),
+            '19:24' => new State(true, 90, 20),
+            '19:25' => new State(true, 80, 30),
+            '19:26' => new State(true, 70, 40),
+            '19:27' => new State(true, 60, 50),
+            '19:28' => new State(true, 50, 60),
+            '19:29' => new State(true, 40, 70),
+            '19:30' => new State(true, 30, 80),
+            '19:31' => new State(true, 20, 90),
+            '19:32' => new State(true, 10, 100),
+            '19:35' => new State(false, 0, 0),
         ];
 
         return $states[$time->format('H:i')] ?? null;
@@ -56,8 +63,25 @@ class Manager
 
     private function applyState(Bulb $bulb, State $state) : void
     {
+        $effect = Bulb::EFFECT_SMOOTH;
+        $duration = 1000;
+
         $on = $state->power ? Bulb::ON : Bulb::OFF;
-        $bulb->setPower($on, BULB::EFFECT_SMOOTH, 500);
+        $bulb->setPower($on, $effect, $duration);
         fwrite(STDERR, "Lamp {$on}\n");
+
+        // If we turned the lamp off, the colour settings don't matter
+        if ($on === Bulb::OFF) {
+            return;
+        }
+
+        $saturation = $state->saturation;
+        $bulb->setHsv(26, $saturation, $effect, $duration);
+        fwrite(STDERR, "Lamp tuned to hue 26\n");
+        fwrite(STDERR, "Lamp tuned to saturation {$saturation}\n");
+
+        $brightness = $state->brightness;
+        $bulb->setBright($brightness, $effect, $duration);
+        fwrite(STDERR, "Lamp tuned to brightness {$brightness}\n");
     }
 }
