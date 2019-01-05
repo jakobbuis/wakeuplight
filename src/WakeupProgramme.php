@@ -38,7 +38,7 @@ class WakeupProgramme
     /**
      * Run the program on a bulb
      */
-    public function runOn(Bulb $bulb) : void
+    public function runOn(Bulb $bulb)
     {
         fwrite(STDERR, "Running WakeupProgramme on bulb {$bulb->getId()}\n");
 

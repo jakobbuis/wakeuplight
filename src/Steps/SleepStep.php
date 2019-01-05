@@ -13,7 +13,7 @@ class SleepStep
         $this->duration = $duration;
     }
 
-    public function applyTo(Bulb $bulb) : void
+    public function applyTo(Bulb $bulb)
     {
         sleep($this->duration);
     }

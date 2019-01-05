@@ -23,7 +23,7 @@ class ColourStep
         }
     }
 
-    public function applyTo(Bulb $bulb) : void
+    public function applyTo(Bulb $bulb)
     {
         $saturation = $this->saturation;
         $brightness = $this->brightness;
