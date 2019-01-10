@@ -30,6 +30,37 @@
             border-left-style: solid;
             width: 14rem;
         }
+
+        button {
+            color: #fff;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            font-weight: 700;
+            border-radius: .25rem;
+            background-color: #3490dc;
+            -webkit-appearance: button;
+            cursor: pointer;
+            text-transform: none;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+            border: 0 solid #dae1e7;
+        }
+
+        input {
+            color: #606f7b;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+            padding-left: .75rem;
+            padding-right: .75rem;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            margin-bottom: .75rem;
+            line-height: 1.25;
+            border-width: 1px;
+            border-radius: .25rem;
+        }
     </style>
 </head>
 <body>
