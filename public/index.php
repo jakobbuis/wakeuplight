@@ -1,15 +1,15 @@
 <?php
-    $triggerFile = __DIR__ . '/../trigger';
-    $stored = false;
-    // Form handling
-    if (isset($_POST['trigger'])) {
-        $trigger = substr(trim($_POST['trigger']), 0, 5);
-        file_put_contents($triggerFile, $trigger);
-        $stored = true;
-    } else {
-        // Show the current trigger setting in the form
-        $trigger = trim(file_get_contents($triggerFile));
-    }
+$triggerFile = __DIR__ . '/../trigger';
+$stored = false;
+// Form handling
+if (isset($_POST['trigger'])) {
+    $trigger = substr(trim($_POST['trigger']), 0, 5);
+    file_put_contents($triggerFile, $trigger);
+    $stored = true;
+} else {
+    // Show the current trigger setting in the form
+    $trigger = trim(file_get_contents($triggerFile));
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
 <body>
     <h1>Set timer</h1>
 
-    <?php if($stored): ?>
+    <?php if ($stored) : ?>
         <p class="notification">
             Trigger set to <?= $trigger ?>
         </p>
