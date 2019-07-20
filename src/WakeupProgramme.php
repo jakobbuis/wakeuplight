@@ -23,13 +23,13 @@ class WakeupProgramme
             new SleepStep(60),
             new ColourStep(60, 50),
             new SleepStep(60),
-            new ColourStep(60, 60),
+            new ColourStep(50, 60),
             new SleepStep(60),
-            new ColourStep(60, 70),
+            new ColourStep(40, 70),
             new SleepStep(60),
-            new ColourStep(60, 80),
+            new ColourStep(30, 80),
             new SleepStep(60),
-            new ColourStep(60, 90),     // to full bright, but still soft
+            new ColourStep(20, 90),     // to full bright, but still soft
             new SleepStep(1800),        // on for 30 minutes
             new PowerStep(false),
         ];
