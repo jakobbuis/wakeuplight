@@ -31,6 +31,7 @@ class WakeupProgramme
             new SleepStep(60),
             new ColourStep(20, 90),     // to full bright, but still soft
             new SleepStep(1800),        // on for 30 minutes
+            new ColourStep(60, 80),     // return to atmospheric lighting
             new PowerStep(false),
         ];
     }
