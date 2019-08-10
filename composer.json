@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "elberth90/yeelight-api-client": "^1.0",
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^3.4"
     },
     "license": "proprietary",
     "authors": [
