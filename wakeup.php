@@ -26,8 +26,7 @@ if (!$forced) {
 
 // Bootstrap system
 require 'vendor/autoload.php';
-$dotenv = new Dotenv(__DIR__);
-$dotenv->load();
+Dotenv::create(__DIR__)->load();
 
 // Connect to bulb
 $client = new YeelightClient();
